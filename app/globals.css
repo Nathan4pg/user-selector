@@ -4,9 +4,9 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: 245, 253, 239;
-  --raised-box-shadow-top-left: 176, 175, 172;
-  --raised-box-shadow-bottom-right: 255, 255, 255;
+  --background-rgb: 207, 203, 196;
+  --raised-box-shadow-top-left: 149, 146, 141;
+  --raised-box-shadow-bottom-right: 255, 255, 251;
   --title-background: 0, 0, 0, 0.04;
 }
 
