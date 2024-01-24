@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 import { DetailedUser } from "../types/user";
 
 interface UserContextType {
@@ -16,14 +22,30 @@ export const useUsers = () => {
   return context;
 };
 
-export const UserProvider = ({
-  children,
-  initialUsers,
-}: {
-  children: ReactNode;
-  initialUsers: DetailedUser[];
-}) => {
-  const [users, setUsers] = useState<DetailedUser[]>(initialUsers);
+export const UserProvider = ({ children }: { children: ReactNode }) => {
+  const [users, setUsers] = useState<DetailedUser[]>([]);
+
+  useEffect(() => {
+    const savedUsers = localStorage.getItem("users");
+    if (savedUsers) {
+      setUsers(JSON.parse(savedUsers));
+    } else {
+      fetchUsers();
+    }
+  }, []);
+
+  const fetchUsers = async () => {
+    try {
+      const res = await fetch(
+        "https://randomuser.me/api/?results=10&inc=name,location,email,dob,phone,cell,id,picture,nat"
+      );
+      const data = await res.json();
+      setUsers(data.results);
+      localStorage.setItem("users", JSON.stringify(data.results));
+    } catch (error) {
+      console.error("Failed to fetch users:", error);
+    }
+  };
 
   return (
     <UserContext.Provider value={{ users, setUsers }}>

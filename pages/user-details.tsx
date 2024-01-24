@@ -1,5 +1,6 @@
 import React from "react";
+import { UserDetails } from "../components/UserDetails";
 
-export default function UserDetails() {
-  return <div>UserDetails</div>;
+export default function UserDetailsPage() {
+  return <UserDetails />;
 }

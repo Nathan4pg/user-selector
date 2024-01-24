@@ -5,6 +5,7 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 207, 203, 196;
+  --background-lighter-rgb: 234, 230, 222;
   --raised-box-shadow-top-left: 149, 146, 141;
   --raised-box-shadow-bottom-right: 255, 255, 251;
   --title-background: 0, 0, 0, 0.04;
@@ -14,6 +15,7 @@
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 36, 46, 56;
+    --background-lighter-rgb: 47, 61, 75;
     --raised-box-shadow-top-left: 22, 29, 35;
     --raised-box-shadow-bottom-right: 50, 63, 77;
     --title-background: 0, 0, 0, 0.2;
@@ -29,6 +31,10 @@ body {
   background: rgb(var(--background-rgb));
   box-shadow: 20px 20px 60px rgb(var(--raised-box-shadow-top-left)),
     -20px -20px 60px rgb(var(--raised-box-shadow-bottom-right));
+}
+
+.user-card:hover {
+  background: rgb(var(--background-lighter-rgb));
 }
 
 .user-dashboard-title {

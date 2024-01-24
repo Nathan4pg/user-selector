@@ -11,7 +11,11 @@ export function UserDashboard() {
   return (
     <div>
       <h1
-        className={`text-5xl py-8 px-4 mb-8 text-center ${raleway.className} font-light leading-snug user-dashboard-title`}
+        className={`
+          text-5xl py-8 px-4 mb-8 text-center 
+          ${raleway.className} font-light 
+          leading-snug user-dashboard-title
+        `}
       >
         User Dashboard
       </h1>

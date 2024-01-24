@@ -11,7 +11,13 @@ export default function UserCard(props: UserCardProps) {
   const fullName = `${user.name.first} ${user.name.last}`;
 
   return (
-    <div className="user-card p-5 rounded-xl m-5 flex basis-96 flex-wrap">
+    <a
+      className={`
+        user-card p-5 rounded-xl m-5 flex basis-96 flex-wrap items-center 
+        -translate-y-0 hover:-translate-y-0.5 ease-in-out transition duration-200
+      `}
+      href={`/user-details?email=${user.email}`}
+    >
       <Image
         src={user.picture.thumbnail}
         alt={fullName}
@@ -31,6 +37,6 @@ export default function UserCard(props: UserCardProps) {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
