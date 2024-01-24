@@ -4,26 +4,35 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 245, 253, 239;
+  --raised-box-shadow-top-left: 176, 175, 172;
+  --raised-box-shadow-bottom-right: 255, 255, 255;
+  --title-background: 0, 0, 0, 0.04;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-rgb: 36, 46, 56;
+    --raised-box-shadow-top-left: 22, 29, 35;
+    --raised-box-shadow-bottom-right: 50, 63, 77;
+    --title-background: 0, 0, 0, 0.2;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.user-card {
+  background: rgb(var(--background-rgb));
+  box-shadow: 20px 20px 60px rgb(var(--raised-box-shadow-top-left)),
+    -20px -20px 60px rgb(var(--raised-box-shadow-bottom-right));
+}
+
+.user-dashboard-title {
+  background: rgba(var(--title-background));
 }
 
 @layer utilities {

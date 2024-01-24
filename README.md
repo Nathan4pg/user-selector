@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Design Challenge
 
-## Getting Started
+Using Node.JS, create a people directory using the [Random User](https://randomuser.me/) API.
 
-First, run the development server:
+The people directory should list all people in a format of your choosing (grid, table, etc..).
+
+Each people displayed should have the following information:
+
+- A profile image
+- Name
+- Age
+- City
+
+When a person is clicked, it should take you to a more detailed information page. This page should display:
+
+- Profile Image
+- Name
+- Age
+- Full Address
+- Email Address
+- Date of Birth
+- Phone number
+
+The application must run in Node.js and use React JS. Feel free to choose a framework (Remix, NextJS, etc...).
+
+You can use any styling library you wish (Tailwindcss, Bootstrap, MaterialUI etc...)
+
+## Acceptance Criteria
+
+- Is server-side rendered
+- Should display up to 10 users
+- A user should be able to drill down to each person and view details:
+  - Profile Image
+  - Name
+  - Age
+  - Full Address
+  - Email Address
+  - Date of Birth
+  - Phone number
+- Runs in Node.js
+- Uses React
+
+## Bonus points
+
+- Should work offline
+- Test coverage
+- Internationalized
+- Paginated directory page with 10 users per page
+- 95+ [Lighthouse](https://developers.google.com/web/tools/lighthouse/) scores
+  for performance and accessibility
+
+## Starting the App
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
