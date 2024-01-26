@@ -1,21 +1,16 @@
 import React, { ReactNode } from "react";
 import { Inter } from "next/font/google";
-import { UserProvider } from "@/app/context/UserContext";
-import { DetailedUser } from "@/app/types/user"; // Adjust the path as needed
+import { DetailedUser } from "@/app/types/user";
 
 const inter = Inter({ subsets: ["latin"] });
 
 interface RootLayoutProps {
   children: ReactNode;
-  initialUsers?: DetailedUser[]; // Optional prop for initial user data
+  initialUsers?: DetailedUser[];
 }
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
-  return (
-    <UserProvider>
-      <div className={inter.className}>{children}</div>
-    </UserProvider>
-  );
+  return <div className={inter.className}>{children}</div>;
 };
 
 export default RootLayout;

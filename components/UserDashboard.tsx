@@ -1,13 +1,15 @@
 import React from "react";
-import { useUsers } from "../app/context/UserContext"; // Adjust the path as needed
 import UserCard from "./UserCard";
 import { Raleway } from "next/font/google";
+import { DetailedUser } from "@/app/types/user";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
-export function UserDashboard() {
-  const { users } = useUsers();
+interface UserDashboardProps {
+  users: DetailedUser[];
+}
 
+export function UserDashboard({ users }: UserDashboardProps) {
   return (
     <div>
       <h1

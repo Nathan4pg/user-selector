@@ -1,22 +1,12 @@
-import { useUsers } from "@/app/context/UserContext";
 import { DetailedUser } from "@/app/types/user";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-export function UserDetails() {
-  const { users } = useUsers();
-  const [user, setUser] = useState<DetailedUser>();
-  const router = useRouter();
-  const { email } = router.query;
-  const fullName = `${user?.name.first} ${user?.name.last}`;
+export function UserDetails({ user }: { user: DetailedUser }) {
+  if (user === null) {
+    return <div>User not found.</div>;
+  }
 
-  useEffect(() => {
-    if (email && users) {
-      const foundUser = users.find((u) => u.email === email);
-      console.log("found user: ", foundUser);
-      setUser(foundUser);
-    }
-  }, [email, users]);
+  const fullName = `${user.name.first} ${user.name.last}`;
 
   return <div>User name is: {fullName}</div>;
 }

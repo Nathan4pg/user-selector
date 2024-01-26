@@ -1,6 +1,7 @@
 import { DetailedUser } from "@/app/types/user";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface UserCardProps {
   user: DetailedUser;
@@ -11,7 +12,7 @@ export default function UserCard(props: UserCardProps) {
   const fullName = `${user.name.first} ${user.name.last}`;
 
   return (
-    <a
+    <Link
       className={`
         user-card p-5 rounded-xl m-5 flex basis-96 flex-wrap items-center 
         -translate-y-0 hover:-translate-y-0.5 ease-in-out transition duration-200
@@ -37,6 +38,6 @@ export default function UserCard(props: UserCardProps) {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
